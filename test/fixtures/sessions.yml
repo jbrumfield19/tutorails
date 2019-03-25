@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  duration: MyString
+  day: 2019-03-25 15:01:11
+  student_id: 1
+  tutor_id: 1
+  location_id: 1
+  subject_id: 1
+
+two:
+  duration: MyString
+  day: 2019-03-25 15:01:11
+  student_id: 1
+  tutor_id: 1
+  location_id: 1
+  subject_id: 1

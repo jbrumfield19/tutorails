@@ -1,0 +1,11 @@
+<%= form_with( model: @student ) do | form | %>
+    <div>
+        <%= form.label "Name" %>
+        <%= form.text_field :name %>
+    </div>
+    <div>
+        <%= form.label "Level" %>
+        <%= form.text_field :level %>
+    </div>
+    <%= form.submit %>
+<% end %>

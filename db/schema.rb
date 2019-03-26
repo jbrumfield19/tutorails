@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_03_25_200223) do
   create_table "tutors", force: :cascade do |t|
     t.string "name"
     t.string "level"
-    t.string "subject"
+    t.integer "subject_id"
     t.string "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

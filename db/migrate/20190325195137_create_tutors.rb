@@ -3,7 +3,7 @@ class CreateTutors < ActiveRecord::Migration[5.2]
     create_table :tutors do |t|
       t.string :name
       t.string :level
-      t.string :subject
+      t.integer :subject_id
       t.string :bio
 
       t.timestamps

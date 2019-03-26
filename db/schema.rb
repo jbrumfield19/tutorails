@@ -10,15 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_25_200223) do
+ActiveRecord::Schema.define(version: 2019_03_26_160456) do
 
-  create_table "locations", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sessions", force: :cascade do |t|
+  create_table "lessons", force: :cascade do |t|
     t.string "duration"
     t.datetime "day"
     t.integer "student_id"
@@ -29,9 +23,21 @@ ActiveRecord::Schema.define(version: 2019_03_25_200223) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "levels", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "name"
-    t.string "level"
+    t.integer "level_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_03_25_200223) do
 
   create_table "tutors", force: :cascade do |t|
     t.string "name"
-    t.string "level"
+    t.integer "level_id"
     t.integer "subject_id"
     t.string "bio"
     t.datetime "created_at", null: false

@@ -1,3 +1,3 @@
 class Location < ApplicationRecord
-    has_many :sessions
+    has_many :lessons
 end

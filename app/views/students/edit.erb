@@ -5,7 +5,7 @@
     </div>
     <div>
         <%= form.label "Level" %>
-        <%= form.text_field :level %>
+        <%= form.collection_select(:level_id, Level.all,:id,:name,prompt: true) %> 
     </div>
     <%= form.submit %>
 <% end %>

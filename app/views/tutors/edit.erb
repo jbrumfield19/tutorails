@@ -4,12 +4,12 @@
         <%= form.text_field :name %>
     </div>
     <div>
-        <%= form.label "Level" %>
-        <%= form.text_field :level %>
+        <%= form.label "Subject" %>
+        <%= form.collection_select(:subject_id, Subject.all,:id,:name,prompt: true) %>
     </div>
     <div>
-        <%= form.label "Subject" %>
-        <%= form.text_field :subject %>
+        <%= form.label "Level" %>
+        <%= form.collection_select(:level_id, Level.all,:id,:name,prompt: true) %> 
     </div>
     <div>
         <%= form.label "Bio" %>

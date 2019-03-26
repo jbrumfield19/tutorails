@@ -1,1 +1,4 @@
 <h2><%= @subject.name%></h2>
+<%@subject.tutors.each do |t|%>
+<li><a href='/tutors/<%=t.id%>'><%=t.name%></a></li>
+<%end%>

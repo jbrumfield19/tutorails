@@ -1,0 +1,6 @@
+<h1>Tutors</h1>
+<ul>
+<% @tutor.each do |tutor|%>
+<li>
+<%= link_to tutor.name, tutor%>
+<%end%>

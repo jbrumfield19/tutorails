@@ -1,11 +1,23 @@
-<%= form_with( model: @student ) do | form | %>
+<%= form_with( model: @tutor ) do | form | %>
+
+    <h1>Create A New Tutor</h1>
     <div>
         <%= form.label "Name" %>
         <%= form.text_field :name %>
     </div>
     <div>
+        <%= form.label "Subject" %>
+        <%= form.text_field :subject %>
+    </div>
+    <div>
         <%= form.label "Level" %>
         <%= form.text_field :level %>
     </div>
+    <div>
+        <%= form.label "bio" %>
+        <%= form.text_field :bio %>
+    </div>
+
+
     <%= form.submit %>
 <% end %>

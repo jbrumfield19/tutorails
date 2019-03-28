@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
 
+
+
     def edit
         @student = Student.find(params[:id])
     end
@@ -10,7 +12,8 @@ class StudentsController < ApplicationController
 
     def create 
         student = Student.create(student_params)
-        redirect_to student
+            redirect_to student
+
     end
 
     def index 

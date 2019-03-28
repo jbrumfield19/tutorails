@@ -1,11 +1,17 @@
 <%= form_with( model: @student ) do | form | %>
+    <h1>Create A New Student</h1>
     <div>
+    
         <%= form.label "Name" %>
         <%= form.text_field :name %>
     </div>
     <div>
         <%= form.label "Level" %>
-        <%= form.text_field :level %>
+        <%= form.collection_select(:level_id, Level.all,:id,:name,prompt: true) %> 
     </div>
-    <%= form.submit %>
+     <div class="form-group">
+        <%= form.label "Password" %>
+        <%= form.password_field :password %>
+    </div>
+    <%= form.submit%>
 <% end %>

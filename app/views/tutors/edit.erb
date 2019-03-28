@@ -11,6 +11,10 @@
         <%= form.label "Level" %>
         <%= form.collection_select(:level_id, Level.all,:id,:name,prompt: true) %> 
     </div>
+     <div class="form-group">
+        <%= form.label "Password" %>
+        <%= form.password_field :password %>
+    </div>
     <div>
         <%= form.label "Bio" %>
         <%= form.text_field :bio %>

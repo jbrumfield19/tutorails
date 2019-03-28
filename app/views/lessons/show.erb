@@ -10,4 +10,7 @@
 
 <h3>Student: </h3>
 <%= @lesson.student.name %>
+<br>
+<button type="button" class="btn btn-danger"><a href="/lessons/<%= @lesson.id %>/edit">Edit Your Lesson</a></button>
+<button type="button" class="btn btn-danger"><a href="/lessons/new">Create a new lesson</a></button>
 

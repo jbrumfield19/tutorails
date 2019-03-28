@@ -1,4 +1,11 @@
 <h2><%= @student.name %></h2>
-<h3>Level: </h3>
-<%= @student.level.name %>
-<a href="/students/<%= @student.id %>/edit">Edit</a>
+<h3>Level: </h3><%= @student.level.name %><br>
+<h3>Lesson: </h3><%@student.lessons.each do |t|%>
+<li><a href='/lessons/<%=t.id%>'>Lesson<%=t.id%></a></li>
+<%end%>
+<div>
+<br>
+
+<button type="button" class="btn btn-danger"><a href="/students/<%= @student.id %>/edit">Edit Your Profile</a></button>
+<button type="button" class="btn btn-danger"><a href="/lessons/new">Create a new lesson</a></button>
+</div>

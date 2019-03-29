@@ -4,7 +4,7 @@ class Student < ApplicationRecord
     belongs_to :level
     has_many :subject
 
-    # has_secure_password
+    has_secure_password
 
-    # validates :name, length: {minimum: 3}
+    validates :name, length: {minimum: 3}
 end

@@ -29,7 +29,7 @@ class TutorsController < ApplicationController
     end
 
     def tutor_params
-        params.require(:tutor).permit(:name, :subject_id, :level_id, :bio)
+        params.require(:tutor).permit(:name, :subject_id, :level_id, :bio, :password_digest)
     end
 
 end

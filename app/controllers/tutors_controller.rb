@@ -28,6 +28,12 @@ class TutorsController < ApplicationController
         redirect_to tutor
     end
 
+    def destroy 
+        @tutor = Tutor.find(params[:id])
+        @tutor.destroy
+        redirect_to '/tutors'
+    end
+
     def tutor_params
         params.require(:tutor).permit(:name, :subject_id, :level_id, :bio, :password_digest)
     end

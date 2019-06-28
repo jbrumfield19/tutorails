@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
 
+
+
     def edit
         @student = Student.find(params[:id])
     end
@@ -10,7 +12,8 @@ class StudentsController < ApplicationController
 
     def create 
         student = Student.create(student_params)
-        redirect_to student
+            redirect_to student
+
     end
 
     def index 
@@ -23,8 +26,8 @@ class StudentsController < ApplicationController
 
     def update 
         student = Student.find(params[:id])
-        student.update(params[:user])
-        redirect_to user
+        student.update(student_params)
+        redirect_to student
     end
 
     def destroy 
@@ -34,7 +37,7 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-        params.require(:student).permit(:name, :level)
+        params.require(:student).permit(:name, :level_id, :password_digest)
     end
 
 end

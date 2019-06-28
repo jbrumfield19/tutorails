@@ -1,31 +1,30 @@
 class SessionsController < ApplicationController
 
-    def edit
-        @user = User.find(params[:id])
+    # skip_before_action :authenticate, :only => [:new, :create]
+    
+    def new
+
+        @users = [Student, Tutor]
+
     end
 
-    def new 
-        @user = User.new 
+    def create
+        byebug
+        if params[:user_type] == "Student"
+          @user=  Student.find_by(email: params[:email])
+        else
+           @user= Tutor.find_by(email:params[:email])
+        end
+        if @user.authenticate(params[:password])
+            session[:current_user_id] = @user.id
+        end
+        redirect_to @user
     end
 
-    def create 
-        user = User.create(user_params)
-        redirect_to user
+
+    def destroy
+        reset_session
+        redirect_to '/sessions/new'
     end
-
-    def index 
-        @user = User.all 
-    end
-
-    def show 
-        @user = User.find(params[:id])
-    end 
-
-    def update 
-        user = User.find(params[:id])
-        user.update(params[:user])
-        redirect_to user
-    end
-
 
 end

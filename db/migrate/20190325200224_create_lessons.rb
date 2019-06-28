@@ -1,6 +1,6 @@
-class CreateSessions < ActiveRecord::Migration[5.2]
+class CreateLessons < ActiveRecord::Migration[5.2]
   def change
-    create_table :sessions do |t|
+    create_table :lessons do |t|
       t.string :duration
       t.datetime :day
       t.integer :student_id

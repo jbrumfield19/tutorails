@@ -1,0 +1,16 @@
+<h2><%= "Lesson #{@lesson.id}" %></h2>
+<h3>Tutor: </h3>
+<%= @lesson.tutor.name %>
+
+<h3>Subject: </h3>
+<%= @lesson.subject.name %>
+
+<h3>Location: </h3>
+<%= @lesson.location.name %>
+
+<h3>Student: </h3>
+<%= @lesson.student.name %>
+<br>
+<button type="button" class="btn btn-danger"><a href="/lessons/<%= @lesson.id %>/edit">Edit Your Lesson</a></button>
+<button type="button" class="btn btn-danger"><a href="/lessons/new">Create a new lesson</a></button>
+

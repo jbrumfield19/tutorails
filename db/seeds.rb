@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Level.create(name: "Elementary")
+Level.create(name: "Middle")
+Level.create(name: "Highschool")
+pass = "password"
+
+10.times do
+    Student.create(name:Faker::Name.name, level: Level.all.sample, password: pass, email: Faker::Internet.free_email)
+end
+10.times do
+    Subject.create(name:Faker::Educator.subject)
+end
+10.times do
+    Tutor.create(name:Faker::Name.name, bio:Faker::Movies::Ghostbusters.quote, level: Level.all.sample, subject: Subject.all.sample, password: pass, email: Faker::Internet.free_email)
+end
+10.times do
+    Location.create(name:Faker::Educator.campus)
+end

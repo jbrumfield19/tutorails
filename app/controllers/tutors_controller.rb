@@ -11,7 +11,7 @@ class TutorsController < ApplicationController
 
     def create 
         tutor = Tutor.create(tutor_params)
-        redirect_to student
+        redirect_to tutor
     end
 
     def index 
@@ -24,8 +24,8 @@ class TutorsController < ApplicationController
 
     def update 
         tutor = Tutor.find(params[:id])
-        tutor.update(params[:tutor])
-        redirect_to user
+        tutor.update(tutor_params)
+        redirect_to tutor
     end
 
     def destroy 
@@ -35,10 +35,9 @@ class TutorsController < ApplicationController
     end
 
     def tutor_params
-        params.require(:tutor).permit(:name, :subject, :level, :bio)
+        params.require(:tutor).permit(:name, :subject_id, :level_id, :bio, :password_digest)
     end
 
 end
-
 
 

@@ -1,6 +1,8 @@
-<h1>Tutors</h1>
-<ul>
-<% @tutor.each do |tutor|%>
-<li>
-<%= link_to tutor.name, tutor%>
+<br><br><br><br>
+
+<center><h1 style="color:red;">Tutors</h1><center>
+        </p><% @tutor.each do |tutor|%></p>
+
+    <%=link_to tutor.name, tutor%><br>
+        
 <%end%>

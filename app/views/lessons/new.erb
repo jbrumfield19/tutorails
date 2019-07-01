@@ -1,23 +1,33 @@
-<%= form_with( model: @lesson ) do | form | %>
+<div class="container h-100">
+<h1 class="text-center red">TutoRails</h1>
 
+<br><br><br><br>
+
+<div class="row h-100 justify-content-center align-items-center">
+
+<%= form_with( model: @lesson ) do | form | %>
+    <center><h1 class="red">New Lesson</h1><center>
+    
+    <div>
+        <%= form.label "Student" %>
+        <%= form.text_area :student_id, value: @current_user.id %> 
+    </div>
     <div>
         <%= form.label "Tutor" %>
-        <%= form.collection_select(:tutor_id, Tutor.all,:id,:name,prompt: true) %> 
+        <%= form.collection_select :tutor_id, Tutor.all,:id,:name, {prompt: true}, {class: 'form-control'} %> 
     </div>
     <div>
         <%= form.label "Subject" %>
-        <%= form.collection_select(:subject_id, Subject.all,:id,:name,prompt: true) %>
+        <%= form.collection_select :subject_id, Subject.all,:id,:name, {prompt: true}, {class: 'form-control'} %> 
     </div>
     <div>
         <%= form.label "Location" %>
-        <%= form.collection_select(:location_id, Location.all,:id,:name,prompt: true) %> 
+        <%= form.collection_select :location_id, Location.all,:id,:name, {prompt: true}, {class: 'form-control'} %> 
     </div>
 
-    <div>
-        <%= form.label "Student" %>
-        <%= form.collection_select(:student_id, Student.all,:id,:name,prompt: true) %> 
-    </div>
-
-
-    <%= form.submit %>
+<br>
+    <%= form.submit 'Create Lesson', :class => "btn btn-danger" %>
 <% end %>
+
+</div>
+</div>

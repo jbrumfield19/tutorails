@@ -1,11 +1,17 @@
-<h2><%= @student.name %></h2>
-<h3>Level: </h3><%= @student.level.name %><br>
-<h3>Lesson: </h3><%@student.lessons.each do |t|%>
+<div class="container h-100">
+<h1 class="text-center red">Welcome to TutoRails</h1>
+<br><br><br><br>
+<div class="row col-sm-12 h-100 justify-content-center align-items-center" >
+<div>
+<h2 class=red><%= @student.name %> </h2>
+<span class="custom-label">Level:</span> <%= @student.level.name %> <br>
+<span class="custom-label">Lessons:</span> 
+<%@student.lessons.each do |t|%>
 <li><a href='/lessons/<%=t.id%>'>Lesson<%=t.id%></a></li>
 <%end%>
-<div>
 <br>
-
-<button type="button" class="btn btn-danger"><a href="/students/<%= @student.id %>/edit">Edit Your Profile</a></button>
-<button type="button" class="btn btn-danger"><a href="/lessons/new">Create a new lesson</a></button>
+<a class="btn btn-danger" href="/students/<%= @student.id %>/edit">Edit Your Profile</a>
+<a class="btn btn-danger" href="/lessons/new">Create a new lesson</a>
+</div>
+</div>
 </div>

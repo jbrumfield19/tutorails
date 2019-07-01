@@ -1,17 +1,17 @@
-<center>
+<br><br><br><br>
+</div>
+<center><h1 style="color:red;">Tutor</h1><center>
 <h1><%= @tutor.name %></h1>
 
-<h3>Subject: </h3>
-<%= @tutor.subject.name %>
+<h2>Subject: </h2> 
+<h3><%= @tutor.subject.name %></h3>
 
-<h3>Level: </h3>
-<%= @tutor.level.name%>
+<h2>Level: </h2>
+<h3><%= @tutor.level.name%></h3>
 
-<h3>Bio: </h3>
+<h2>Bio: </h2>
 <%= @tutor.bio %>
 <div>
 <br>
 <button type="button" class="btn btn-danger"><a href="/tutors/<%= @tutor.id %>/edit">Edit Your Profile</a></button>
-
 </div>
-</center>

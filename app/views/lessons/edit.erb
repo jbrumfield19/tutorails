@@ -1,6 +1,7 @@
+<center><h1 style="color:red;">Edit Lesson</h1><center>
 <h1>Edit Lesson</h1>
 <%= form_with( model: @lesson ) do | form | %>
-
+    
     <div>
         <%= form.label "Tutor" %>
         <%= form.collection_select(:tutor_id, Tutor.all,:id,:name,prompt: true) %> 
@@ -13,12 +14,9 @@
         <%= form.label "Location" %>
         <%= form.collection_select(:location_id, Location.all,:id,:name,prompt: true) %> 
     </div>
-
     <div>
         <%= form.label "Student" %>
         <%= form.collection_select(:student_id, Student.all,:id,:name,prompt: true) %> 
     </div>
-
-
     <%= form.submit %>
 <% end %>

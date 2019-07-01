@@ -1,4 +1,6 @@
-<h2>Subjects</h2>
-<%@subjects.each do |t|%>
-<li><a href='/subjects/<%=t.id%>'><%=t.name%></a></li>
+<br><br><br><br>
+<center><h1 style="color:red;">Subjects</h1><center>
+
+<p><%@subjects.each do |t|%></p>
+<a href='/subjects/<%=t.id%>'><%=t.name%></a><br>
 <%end%>

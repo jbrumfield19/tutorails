@@ -1,3 +1,4 @@
+<h1>Session</h1>
 <%= form_with( url: '/sessions', method: :post ) do | form | %>
     <div class="form-group">
         <%= form.label "Email" %>
@@ -7,6 +8,6 @@
         <%= form.label "Password" %>
         <%= form.password_field :password %>
     </div>
-    <%=form.select :user_type, @users.collect {|p| [p] }, { include_blank: "Please choose user type" }%>
+       <%=form.select :user_type, @users.collect {|p| [p] }, { include_blank: "Please choose user type" }%>
     <%= form.submit %>
 <% end %>

@@ -1,16 +1,17 @@
-<h2><%= "Lesson #{@lesson.id}" %></h2>
+<center><h1 style="color:red;"><%= "Lesson #{@lesson.id}" %></h1><center>
 <h3>Tutor: </h3>
 <%= @lesson.tutor.name %>
-
 <h3>Subject: </h3>
 <%= @lesson.subject.name %>
-
 <h3>Location: </h3>
 <%= @lesson.location.name %>
-
 <h3>Student: </h3>
 <%= @lesson.student.name %>
 <br>
-<button type="button" class="btn btn-danger"><a href="/lessons/<%= @lesson.id %>/edit">Edit Your Lesson</a></button>
-<button type="button" class="btn btn-danger"><a href="/lessons/new">Create a new lesson</a></button>
+<a class="btn btn-danger" href="/lessons/<%= @lesson.id %>/edit">Edit Your Lesson</a>
+<a class="btn btn-danger" href="/lessons/new">Create a new lesson</a>
+<a class="btn btn-danger" href="/students/<%= @lesson.student.id %>">Go to Student's Page</a> 
+<br><br><br><br>
+<%= button_to "Cancel Lesson", {:controller => :lessons,
+      :action => 'destroy', :id => @lesson.id }, :method => :delete, :class => 'btn btn-danger'  %>
 

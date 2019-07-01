@@ -10,8 +10,9 @@ class TutorsController < ApplicationController
     end
 
     def create 
-        tutor = Tutor.create(tutor_params)
-        redirect_to tutor
+        @tutor = Tutor.create(tutor_params)
+        @tutor.save
+        redirect_to @tutor
     end
 
     def index 
@@ -25,7 +26,7 @@ class TutorsController < ApplicationController
     def update 
         tutor = Tutor.find(params[:id])
         tutor.update(tutor_params)
-        redirect_to tutor
+        redirect_to tutors_url
     end
 
     def tutor_params

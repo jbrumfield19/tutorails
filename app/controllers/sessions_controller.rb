@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-    # skip_before_action :authenticate, :only => [:new, :create]
+    skip_before_action :current_user, :only => [:new, :create]
     
     def new
 
@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
     end
 
     def create
-        byebug
         if params[:user_type] == "Student"
           @user=  Student.find_by(email: params[:email])
         else
